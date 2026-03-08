@@ -37,7 +37,7 @@ export default function Hero() {
             }}
           >
             <span style={{ width: 26, height: 1, background: 'var(--sage)', display: 'inline-block' }} />
-            Data engineer · AI builder · Curious human
+            Data engineer · AI builder · Quietly curious human
           </motion.div>
 
           <motion.h1
@@ -61,9 +61,24 @@ export default function Hero() {
             }}
           >
             By day, I design data platforms and AI pipelines for products people use.
-            By night, I read too much, cook with too many spices, and think about how everything connects.{' '}
-            <strong style={{ color: 'var(--text)', fontWeight: 500 }}>Currently at Oddr</strong>,
-            working on enterprise data infrastructure.
+            By night, I read too much, cook and bake to bollywood music, and think about how everything connects.{' '}
+            Currently at{' '}
+            <a
+              href="https://oddr.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: 'var(--text)',
+                fontWeight: 500,
+                textDecoration: 'underline',
+                textDecorationColor: 'var(--border)',
+                textUnderlineOffset: '3px',
+              }}
+            >
+              Oddr
+            </a>
+            
+            {' '}working on enterprise data infrastructure.
           </motion.p>
 
           <motion.div
@@ -115,7 +130,9 @@ export default function Hero() {
               <Tag variant="accent">Azure · GCP · Snowflake</Tag>
               <Tag variant="sage">Python · PySpark · SQL</Tag>
               <Tag>LLMs · ETL · API Design</Tag>
-              <Tag variant="sage">ISRO Research · Published</Tag>
+              <a href="https://www.corpuspublishers.com/assets/articles/aart-v6-25-1082.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                <Tag variant="sage">ISRO Research · Published ↗</Tag>
+              </a>
             </div>
 
             <div style={{
@@ -124,8 +141,8 @@ export default function Hero() {
               borderTop: '1px solid var(--border-soft)',
             }}>
               {[
-                { num: '2+', label: 'Yrs prod.' },
-                { num: '100M+', label: 'Records' },
+                { num: '3+', label: 'Yrs prod.' },
+                { num: '500M+', label: 'Records' },
                 { num: '30+', label: 'Dashboards' },
               ].map((s) => (
                 <div key={s.label}>
@@ -140,6 +157,23 @@ export default function Hero() {
                   }}>{s.label}</span>
                 </div>
               ))}
+            
+            </div>
+
+            {/* Spotify */}
+            <div style={{ marginTop: '1.2rem', borderTop: '1px solid var(--border-soft)', paddingTop: '1.2rem' }}>
+              <div style={{ fontSize: '0.62rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-soft)', marginBottom: '0.6rem' }}>
+                currently playing
+              </div>
+              <iframe
+                src="https://open.spotify.com/embed/playlist/3ZYe1yuCg29XHkj81H1stg"
+                width="100%"
+                height="80"
+                frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                style={{ borderRadius: 8 }}
+              />
             </div>
           </div>
 
@@ -157,7 +191,7 @@ export default function Hero() {
             }} />
             <div style={{ fontSize: '0.82rem', color: 'var(--text-mid)', lineHeight: 1.5 }}>
               <strong style={{ color: 'var(--text)', fontWeight: 500 }}>Currently writing about:</strong>{' '}
-              slow life, introversion, the sense of becoming, and occasionally — data systems.
+               life in all its quiet corners — and sometimes, data systems that surprise me.
             </div>
           </div>
         </motion.div>

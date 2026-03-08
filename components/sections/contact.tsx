@@ -5,8 +5,8 @@ import { useState, useEffect, useRef } from 'react'
 const socials = [
   { label: 'LinkedIn', href: 'https://linkedin.com/in/radhikaa29' },
   { label: 'GitHub',   href: 'https://github.com/aggarwalradhika29' },
-  { label: 'Hashnode', href: 'https://hashnode.com' },
-  { label: 'LeetCode', href: 'https://leetcode.com' },
+  { label: 'Hashnode', href: 'https://hashnode.com/@aggarwalradhika' },
+  { label: 'LeetCode', href: 'https://leetcode.com/seekhradhika' },
 ]
 
 type FormState = 'idle' | 'loading' | 'success' | 'error'

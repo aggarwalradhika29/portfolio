@@ -8,11 +8,11 @@ import Chip from '@/components/ui/chip'
 const experiences = [
   {
     date: 'Oct 2025 – Present',
-    role: 'Software Engineer',
+    role: 'Integration Engineer',
     company: 'Oddr · Remote',
     description:
       'Architecting end-to-end data and integration platforms using Azure. Leading POCs comparing Azure-native designs with Boomi & Integration Builder. Designing event-driven systems for secure, reliable enterprise data exchange.',
-    chips: ['Azure Functions', 'Python', 'Spark', 'RBAC', 'Private Networking'],
+    chips: ['Azure Functions', 'Python', 'Spark', 'RBAC', 'Private Networking', 'Integration Builder', 'LegalTech'],
   },
   {
     date: 'Sep 2023 – Oct 2025',
@@ -20,7 +20,7 @@ const experiences = [
     company: 'The Guardian Group · Gurugram',
     description:
       'Owned and scaled production warehouses managing 100M+ records across BigQuery and Snowflake. Built ETL pipelines reducing latency by 60%. Led a middleware initiative eliminating 95% of manual order creation touchpoints. Delivered 30+ real-time dashboards driving executive decisions across BellaVita, GNC India, ThriveCo, Bevzilla, and BetterAlt.',
-    chips: ['BigQuery', 'Snowflake', 'PySpark', 'Pub/Sub', 'SAP', 'Shopify'],
+    chips: ['BigQuery', 'Snowflake', 'PySpark', 'Pub/Sub', 'SAP', 'Shopify', 'Looker Studio', 'D2C Product Tech'],
   },
   {
     date: 'Oct 2022 – Apr 2023',
@@ -28,14 +28,14 @@ const experiences = [
     company: 'Indian Space Research Organisation (ISRO) · New Delhi',
     description:
       'Built an automation pipeline for multi-temporal Sentinel-1A SAR satellite data. Applied ML algorithms advancing crop classification accuracy by 15–20%. Published peer-reviewed research on in-season crop acreage forecasting.',
-    chips: ['Scikit-learn', 'SNAP API', 'Geospatial', 'Published Research'],
+    chips: ['Scikit-learn', 'SNAP API', 'Geospatial ML', 'Remote Sensing', 'Python', 'Big Data', 'SpaceTech'],
   },
   {
     date: 'Jun 2022 – Jul 2022',
     role: 'Machine Learning Intern',
     company: 'Universal Technical Systems · Gurugram',
     description:
-      'Led a team of 4 to develop a predictive maintenance model for industrial machinery data. Built and automated the process for evaluating and selecting the best-performing ML model.',
+      'Collaborated to a team of 4 to develop a predictive maintenance model for industrial machinery data. Built and automated the process for evaluating and selecting the best-performing ML model.',
     chips: ['Python', 'Scikit-learn', 'Predictive Modeling'],
   },
 ]
