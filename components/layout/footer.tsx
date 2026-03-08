@@ -5,10 +5,10 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 const links = [
-  { href: 'https://linkedin.com/in/radhika-aggarwal', label: 'LinkedIn' },
+  { href: 'https://linkedin.com/in/radhikaa29', label: 'LinkedIn' },
   { href: 'https://github.com/aggarwalradhika29',     label: 'GitHub' },
-  { href: 'https://hashnode.com',                     label: 'Hashnode' },
-  { href: 'https://leetcode.com',                     label: 'LeetCode' },
+  { href: 'https://hashnode.com/@aggarwalradhika',    label: 'Hashnode' },
+  { href: 'https://leetcode.com/seekhradhika',        label: 'LeetCode' },
 ]
 
 export default function Footer() {
