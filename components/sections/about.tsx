@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 
 const skills = [
   { label: 'Cloud & Data Platforms', chips: ['Azure Functions', 'GCP BigQuery', 'Snowflake', 'AWS Redshift', 'Databricks', 'Apache Kafka'] },
-  { label: 'Languages & Frameworks', chips: ['Python', 'SQL', 'PySpark', 'Go', 'Java', 'C++'] },
+  { label: 'Languages & Frameworks', chips: ['Python', 'SQL', 'PySpark', 'Go', 'C++'] },
   { label: 'AI & ML',                chips: ['LangChain', 'TensorFlow', 'Scikit-learn', 'LLM Training', 'Geospatial ML'] },
   { label: 'Integration & ETL',      chips: ['REST API', 'GraphQL', 'SAP Integration', 'Pub/Sub', 'Webhooks'] },
   { label: 'BI & Reporting',         chips: ['Looker Studio', 'Power BI', 'Advanced Excel'] },
@@ -12,9 +12,9 @@ const skills = [
 
 const interests = [
   { icon: '📚', text: 'Always mid-book — usually somewhere between fiction and ideas' },
-  { icon: '🍳', text: 'Cooking with too much enthusiasm and too many spices' },
+  { icon: '🍳', text: 'Cooking and baking — slowly getting better at both' },
   { icon: '🎵', text: 'Music as a mood regulator and thinking aid' },
-  { icon: '🏃', text: 'Fitness as a non-negotiable part of the day' },
+  { icon: '🏃', text: 'Building a fitness habit, one day at a time' },
   { icon: '🔭', text: 'Endlessly curious about how systems — technical and human — work' },
 ]
 
