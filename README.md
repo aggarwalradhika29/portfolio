@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# radhika aggarwal — portfolio
 
-## Getting Started
+personal portfolio and writing space built with next.js 14.
 
-First, run the development server:
+**live site →** [radhikaa29.vercel.app](https://radhikaa29.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## about
+
+this is my corner of the internet — part portfolio, part blog, part digital home. it shows my work in data engineering and ai, and also the things i think and write about outside of work.
+
+---
+
+## stack
+
+| layer | tech |
+|---|---|
+| framework | next.js 14 (app router) |
+| language | typescript |
+| styling | tailwind css + css variables |
+| animations | framer motion |
+| blog | mdx + next-mdx-remote |
+| contact form | resend |
+| deployment | vercel |
+
+---
+
+## structure
+
+```
+portfolio/
+├── app/                        
+│   ├── page.tsx                # home page
+│   ├── layout.tsx              # root layout
+│   ├── projects/page.tsx       # all projects
+│   ├── writing/
+│   │   ├── page.tsx            # all posts
+│   │   └── [slug]/page.tsx     # individual post
+│   └── api/contact/route.ts    # contact form api
+├── components/
+│   ├── layout/                 # nav, footer
+│   ├── sections/               # hero, about, experience, projects, writing, contact
+│   └── ui/                     # button, tag, chip
+├── content/
+│   └── posts/                  # mdx blog posts
+├── lib/
+│   ├── mdx.ts                  # blog helpers
+│   ├── fonts.ts                # font config
+│   ├── projects.ts             # projects data
+│   └── utils.ts                # shared utilities
+└── styles/
+    └── globals.css             # css tokens, themes, base styles
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## running locally
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+git clone https://github.com/aggarwalradhika29/portfolio.git
+cd portfolio
+npm install
+npm run dev
+```
 
-## Learn More
+open [http://localhost:3000](http://localhost:3000)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## writing a new post
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+create a new `.mdx` file in `content/posts/`:
 
-## Deploy on Vercel
+```mdx
+---
+title: Your post title
+excerpt: A short description shown in previews.
+date: 2025-04-01
+tag: post-tag
+readTime: 5 min read
+published: true
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+your content here.
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+set `published: false` to keep it as a draft. push to main and vercel deploys automatically.
+
+---
+
+## environment variables
+
+create a `.env.local` file at the root:
+
+```
+RESEND_API_KEY=your_resend_api_key
+```
+
+get a free api key at [resend.com](https://resend.com). the contact form won't work without it but everything else will.
+
+---
+
+## theme
+
+two themes — dark (default) and light — toggled via the 🌙 / ☀️ button in the nav. preference is saved to localStorage.
+
+palette is soft pastels: blush, sage, cream with a terracotta accent — warm and editorial in light mode, deep and rich in dark mode.
+
+---
+
+## deploying
+
+the repo is connected to vercel. every push to `main` triggers an automatic redeploy.
+
+to deploy your own fork:
+1. fork this repo
+2. import into [vercel.com](https://vercel.com)
+3. add `RESEND_API_KEY` in vercel environment variables
+4. deploy
+
+---
+
+*built and maintained by [radhika aggarwal](https://github.com/aggarwalradhika29)*
