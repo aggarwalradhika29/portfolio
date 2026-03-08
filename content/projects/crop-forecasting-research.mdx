@@ -1,0 +1,62 @@
+---
+title: In-season crop acreage forecasting using SAR satellite data
+excerpt: Published research from ISRO — how Sentinel-1A imagery and ML can meaningfully improve agricultural forecasting accuracy.
+date: 2025-03-10
+tag: Research
+readTime: 7 min read
+published: true
+---
+
+During my time at ISRO, I worked on a problem that sits at the intersection of satellite remote sensing, machine learning, and agricultural policy: how do you accurately estimate how much of a given crop is being grown, while the growing season is still happening?
+
+This post is a plain-language summary of the research we published.
+
+## Why in-season forecasting matters
+
+Agricultural forecasting has obvious importance — for food security planning, commodity markets, government policy, import/export decisions. The traditional approach is ground-based surveys: send people to sample fields, aggregate the results, produce an estimate.
+
+This works, but it's slow, expensive, and produces estimates that arrive after the fact. By the time you know how much wheat was grown, decisions that needed that information have already been made on incomplete data.
+
+Satellite data offers a different possibility: continuous, wide-area observation that doesn't require anyone to visit a field.
+
+## What SAR data is and why it's useful
+
+SAR stands for Synthetic Aperture Radar. Unlike optical satellites, which are limited by cloud cover and nighttime, SAR satellites actively emit microwave pulses and measure the backscatter. They work in all weather conditions, day or night.
+
+For agriculture, SAR is particularly useful because the backscatter signal is sensitive to vegetation structure and soil moisture — both of which change in characteristic ways as crops grow.
+
+The Sentinel-1A satellite, operated by ESA, produces free, regularly updated SAR imagery at a resolution useful for field-level analysis. The ISRO EOS-4 satellite (also SAR) provides complementary coverage.
+
+## The approach
+
+We built an automated pipeline that:
+
+1. Ingests multi-temporal SAR scenes for a region of interest
+2. Pre-processes the imagery — calibration, terrain correction, filtering
+3. Extracts time-series features that capture how backscatter evolves through the season
+4. Trains classification models on labelled ground truth data
+5. Produces crop-type maps and acreage estimates
+
+The "multi-temporal" part is key. A single image at one point in time can't reliably distinguish crop types — different crops can look similar at any given moment. But their *trajectories* through the season are distinctive. Rice, wheat, and fallow land follow different backscatter curves over time.
+
+## What the ML models were doing
+
+We tested several approaches — Random Forest, SVM, gradient boosting — on the time-series features. The task was classification: for each pixel, what crop type (if any) is growing?
+
+The improvements we achieved — 15–20% accuracy gains over baseline approaches — came largely from the feature engineering: how we represented the temporal evolution of the signal, rather than just point-in-time values.
+
+We also found that including texture features (capturing spatial patterns in the SAR imagery) alongside the temporal features improved discrimination between crop types that had similar mean backscatter trajectories.
+
+## What this enables
+
+The output is a crop map produced during the growing season — before harvest. Combined with field-area data, this gives an acreage estimate that can inform decisions in time to actually be useful.
+
+The pipeline we built was designed to be automated and repeatable — new imagery triggers processing automatically, producing updated estimates as the season progresses.
+
+## What I took from it
+
+This project was my first experience of research that connected to a real-world policy problem. The technical work was interesting, but what made it meaningful was the application: better crop estimates can actually change how resources are allocated, how imports are planned, how farmers are supported.
+
+I also developed a lasting interest in geospatial data — the particular combination of domain knowledge, data engineering, and ML that this kind of work requires. It's a rich problem space, and one I'd like to return to.
+
+The full paper is available [here](#) if you'd like to read the details.

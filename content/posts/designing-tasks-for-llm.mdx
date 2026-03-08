@@ -1,0 +1,52 @@
+---
+title: What I learned designing NP-hard tasks to train LLMs
+excerpt: Six months building challenge datasets taught me more about how language models reason — and fail — than anything else I've done.
+date: 2025-01-28
+tag: Tech & AI
+readTime: 6 min read
+published: true
+---
+
+For about six months, my job was to design tasks that were meant to be hard — genuinely hard — for large language models.
+
+NP-hard problems, complex reasoning chains, programming challenges with edge cases, quantitative problems that required holding many things in working memory simultaneously. The goal was to build datasets that would push models toward better reasoning, or at least reveal where their reasoning broke down.
+
+It was one of the most instructive things I've done.
+
+## What I was doing
+
+The work involved designing problems, solving them myself to verify they were solvable, documenting the solution process, and then evaluating whether model outputs were actually correct — not just plausible-sounding.
+
+That last part is where it got interesting.
+
+## The gap between sounding right and being right
+
+Language models are extraordinarily good at producing text that sounds correct. The structure is right, the vocabulary is appropriate, the confidence is calibrated. And then you check the actual answer and it's wrong — sometimes subtly, sometimes completely.
+
+What I learned is that the failure mode isn't usually random. Models tend to fail in *systematic* ways. They take the path of least resistance through a problem rather than the path that's actually correct. They pattern-match to similar problems they've seen rather than reasoning from first principles. They lose track of constraints when the problem has many of them.
+
+This is, in a way, a very human failure mode. We do the same thing. The difference is that humans usually have some self-awareness about when they're out of their depth. Models often don't — they generate confidently even when they're generating incorrectly.
+
+## What makes a good hard task
+
+A good hard task is one that can't be solved by pattern-matching alone. It requires something closer to actual reasoning — holding a state, applying rules consistently, checking your work against constraints.
+
+The hardest tasks to design were the ones that *looked* easy but weren't. Tasks where the obvious approach leads you confidently in the wrong direction. These were the most revealing, because they separated models that were reasoning from models that were performing reasoning.
+
+## What this changed about how I think about AI
+
+I came into this work with fairly abstract ideas about what language models are doing. I left with something more concrete.
+
+These models are very powerful interpolators. They are extraordinarily good at generating plausible continuations of text, and because so much human knowledge is encoded in text, this turns out to be more powerful than it sounds.
+
+But there's a real difference between interpolating within a distribution and reasoning about a novel problem. The former scales with data. The latter seems to require something that current architectures are still developing.
+
+This doesn't make the technology less impressive — it's still remarkable. But it changes where I'd rely on it and where I'd want a human in the loop.
+
+## The thing I keep thinking about
+
+The most interesting discovery was noticing which kinds of problems models handled surprisingly well, versus the kinds they consistently failed on. The pattern — and I'm still thinking about what it means — is that models seem to handle *encyclopaedic* reasoning much better than *procedural* reasoning.
+
+Ask a model to synthesise information from across a domain: impressive. Ask it to execute a multi-step procedure without making an error: much less reliable.
+
+I don't have a clean conclusion from this. But it's shaped how I think about where AI augments human work, versus where it needs to be watched carefully.
