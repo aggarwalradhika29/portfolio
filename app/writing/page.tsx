@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Writing — Radhika Aggarwal',
-  description: 'Essays on slow life, introversion, becoming, skincare, data engineering, and AI.',
+  description: 'Essays on life in general - in all its quiet corners, data engineering, and AI.',
 }
 
 export default function WritingPage() {
@@ -26,8 +26,7 @@ export default function WritingPage() {
             <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>thinking about</em>
           </h1>
           <p style={{ fontSize: '1rem', color: 'var(--text-mid)', lineHeight: 1.8 }}>
-            I write about the quiet things — slow living, becoming, skincare as self-care,
-            introversion as a superpower — and occasionally about data and AI when I have something real to say.
+            I write about the quiet things in life — and occasionally about data and AI when I have something real to say.
           </p>
         </div>
 
