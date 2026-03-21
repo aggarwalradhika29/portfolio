@@ -1,52 +1,57 @@
 ---
-title: What I learned designing NP-hard tasks to train LLMs
-excerpt: Six months building challenge datasets taught me more about how language models reason — and fail — than anything else I've done.
-date: 2025-01-28
-tag: Tech & AI
+title: what i learned designing np-hard tasks to train llms
+excerpt: four weeks building challenge datasets taught me more about how language models reason — and fail — than anything else i've done.
+date: 2026-04-07
+tag: tech & ai
 readTime: 6 min read
 published: true
 ---
 
-For about six months, my job was to design tasks that were meant to be hard — genuinely hard — for large language models.
+## on designing hard problems for language models
 
-NP-hard problems, complex reasoning chains, programming challenges with edge cases, quantitative problems that required holding many things in working memory simultaneously. The goal was to build datasets that would push models toward better reasoning, or at least reveal where their reasoning broke down.
+for about four weeks in september ’25, part of my work involved designing problems that were meant to be hard for large language models.
 
-It was one of the most instructive things I've done.
+not just typical prompts — genuinely difficult ones.
 
-## What I was doing
+np-hard tasks, tricky programming problems, quantitative questions with many constraints, reasoning chains where you had to keep track of several steps at once. the goal was to build datasets that could test whether models were actually reasoning, or just producing answers that sounded right.
 
-The work involved designing problems, solving them myself to verify they were solvable, documenting the solution process, and then evaluating whether model outputs were actually correct — not just plausible-sounding.
+it ended up being one of the most interesting things i’ve worked on.
 
-That last part is where it got interesting.
+the process itself was simple.
 
-## The gap between sounding right and being right
+design the problem.
+solve it myself to make sure it was actually solvable.
+document the reasoning.
+and then evaluate the model’s answer.
 
-Language models are extraordinarily good at producing text that sounds correct. The structure is right, the vocabulary is appropriate, the confidence is calibrated. And then you check the actual answer and it's wrong — sometimes subtly, sometimes completely.
+that last part was where things got interesting.
 
-What I learned is that the failure mode isn't usually random. Models tend to fail in *systematic* ways. They take the path of least resistance through a problem rather than the path that's actually correct. They pattern-match to similar problems they've seen rather than reasoning from first principles. They lose track of constraints when the problem has many of them.
+because language models are extremely good at sounding correct.
 
-This is, in a way, a very human failure mode. We do the same thing. The difference is that humans usually have some self-awareness about when they're out of their depth. Models often don't — they generate confidently even when they're generating incorrectly.
+the explanation is structured well.
+the language is confident.
+the steps look logical.
 
-## What makes a good hard task
+and then you check the final answer — and it’s wrong.
 
-A good hard task is one that can't be solved by pattern-matching alone. It requires something closer to actual reasoning — holding a state, applying rules consistently, checking your work against constraints.
+sometimes subtly wrong. sometimes completely off.
 
-The hardest tasks to design were the ones that *looked* easy but weren't. Tasks where the obvious approach leads you confidently in the wrong direction. These were the most revealing, because they separated models that were reasoning from models that were performing reasoning.
+after a while i started noticing something: the failures weren’t random.
 
-## What this changed about how I think about AI
+models tend to take the path of least resistance through a problem. they pattern-match to something similar instead of reasoning through every constraint. if the task requires holding too many conditions in working memory, they often lose track of one somewhere in the middle.
 
-I came into this work with fairly abstract ideas about what language models are doing. I left with something more concrete.
+in a strange way, it’s a very human kind of mistake.
 
-These models are very powerful interpolators. They are extraordinarily good at generating plausible continuations of text, and because so much human knowledge is encoded in text, this turns out to be more powerful than it sounds.
+the difference is that humans usually pause when they feel unsure. models don’t — they continue confidently.
 
-But there's a real difference between interpolating within a distribution and reasoning about a novel problem. The former scales with data. The latter seems to require something that current architectures are still developing.
+the hardest problems to design were the ones that looked easy but weren’t. questions where the obvious approach leads you confidently in the wrong direction. those were the most revealing, because they separated models that were reasoning from models that were just performing reasoning.
 
-This doesn't make the technology less impressive — it's still remarkable. But it changes where I'd rely on it and where I'd want a human in the loop.
+after a few weeks of this, my mental model of ai shifted a little.
 
-## The thing I keep thinking about
+these systems are incredibly good at synthesising knowledge across domains. ask them to connect ideas from many places, and they’re impressive.
 
-The most interesting discovery was noticing which kinds of problems models handled surprisingly well, versus the kinds they consistently failed on. The pattern — and I'm still thinking about what it means — is that models seem to handle *encyclopaedic* reasoning much better than *procedural* reasoning.
+but ask them to execute a careful multi-step procedure without making a mistake, and things get less reliable.
 
-Ask a model to synthesise information from across a domain: impressive. Ask it to execute a multi-step procedure without making an error: much less reliable.
+that doesn’t make the technology less remarkable. if anything, it makes it more interesting.
 
-I don't have a clean conclusion from this. But it's shaped how I think about where AI augments human work, versus where it needs to be watched carefully.
+i don't have a clean conclusion from this. but it's shaped how i think about where ai augments human work, versus where it needs to be watched carefully.
