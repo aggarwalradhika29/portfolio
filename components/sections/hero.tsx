@@ -40,6 +40,13 @@ export default function Hero() {
             Data engineer · AI builder · Quietly curious human
           </motion.div>
 
+          <motion.div
+            custom={0.5} variants={fadeUp} initial="hidden" animate="show"
+            style={{ marginBottom: '1.4rem' }}
+          >
+            <Tag variant="sage">🟢 Open for freelance data & AI engineering</Tag>
+          </motion.div>
+
           <motion.h1
             custom={1} variants={fadeUp} initial="hidden" animate="show"
             style={{
@@ -142,7 +149,7 @@ export default function Hero() {
             }}>
               {[
                 { num: '3+', label: 'Yrs prod.' },
-                { num: '500M+', label: 'Records' },
+                { num: '100M+', label: 'Records' },
                 { num: '30+', label: 'Dashboards' },
               ].map((s) => (
                 <div key={s.label}>

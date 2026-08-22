@@ -96,17 +96,26 @@ export default function Projects() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem', marginBottom: '1rem' }}>
               {project.chips.map((chip) => <Chip key={chip}>{chip}</Chip>)}
             </div>
-            <a href={project.githubUrl} style={{
-              fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase',
-              color: 'var(--accent)', textDecoration: 'none',
-            }}>
-              GitHub ↗
-            </a>
+            {project.githubUrl !== '#' && (
+              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" style={{
+                fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase',
+                color: 'var(--accent)', textDecoration: 'none',
+              }}>
+                {project.slug === 'sar-crop-forecasting' ? 'Read Paper ↗' : 'GitHub ↗'}
+              </a>
+            )}
+            {project.githubUrl === '#' && (
+              <span style={{
+                fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase',
+                color: 'var(--text-soft)',
+              }}>
+                Private repo
+              </span>
+            )}
           </motion.div>
         ))}
       </div>
 
-      {/* View all link */}
       <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
         <Link
           href="/projects"

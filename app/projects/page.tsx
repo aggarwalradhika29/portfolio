@@ -88,17 +88,26 @@ export default function ProjectsPage() {
                 ))}
               </div>
 
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
+              {project.githubUrl !== '#' ? (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase',
+                    color: 'var(--accent)', textDecoration: 'none',
+                  }}
+                >
+                  {project.slug === 'sar-crop-forecasting' ? 'Read Paper ↗' : 'GitHub ↗'}
+                </a>
+              ) : (
+                <span style={{
                   fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase',
-                  color: 'var(--accent)', textDecoration: 'none',
-                }}
-              >
-                GitHub ↗
-              </a>
+                  color: 'var(--text-soft)',
+                }}>
+                  Private repo
+                </span>
+              )}
             </div>
           ))}
         </div>

@@ -8,19 +8,27 @@ import Chip from '@/components/ui/chip'
 const experiences = [
   {
     date: 'Oct 2025 – Present',
-    role: 'Integration Engineer',
+    role: 'Integration Engineer, Data Engineering',
     company: 'Oddr · Remote',
     description:
-      'Architecting end-to-end data and integration platforms using Azure. Leading POCs comparing Azure-native designs with Boomi & Integration Builder. Designing event-driven systems for secure, reliable enterprise data exchange.',
-    chips: ['Azure Functions', 'Python', 'Spark', 'RBAC', 'Private Networking', 'Integration Builder', 'LegalTech'],
+      'Independently architected a cloud-native data integration middleware on Azure connecting law firm data sources to product APIs — full ownership from requirements scoping to production delivery. Designed API-led, event-driven ETL pipelines processing 9M+ API calls/tenant/month across multiple tenants, cutting integration cost 90% vs. Boomi and latency 66%. Built security architecture (Managed Identity, RBAC, private networking) and CI/CD via GitHub Actions.',
+    chips: ['Azure Functions', 'Python', 'PySpark', 'RBAC', 'Private Networking', 'GitHub Actions', 'Integration Builder', 'LegalTech'],
   },
   {
     date: 'Sep 2023 – Oct 2025',
     role: 'Data Engineer',
     company: 'The Guardian Group · Gurugram',
     description:
-      'Owned and scaled production warehouses managing 100M+ records across BigQuery and Snowflake. Built ETL pipelines reducing latency by 60%. Led a middleware initiative eliminating 95% of manual order creation touchpoints. Delivered 30+ real-time dashboards driving executive decisions across BellaVita, GNC India, ThriveCo, Bevzilla, and BetterAlt.',
+      'Designed and owned cloud data warehouses on GCP BigQuery and Snowflake processing 100M+ records — primary analytics infrastructure for Product, Marketing, Finance, and IT. Built automated ETL/ELT pipelines (Shopify, Payments, GA4, Pub/Sub) reducing latency 60%. Led a middleware initiative eliminating 95% of manual order processing. Automated reconciliation and audit workflows, saving 30+ FTE hours/week. Delivered 30+ executive dashboards across BellaVita, GNC India, ThriveCo, Bevzilla, and BetterAlt.',
     chips: ['BigQuery', 'Snowflake', 'PySpark', 'Pub/Sub', 'SAP', 'Shopify', 'Looker Studio', 'D2C Product Tech'],
+  },
+  {
+    date: 'Aug 2025 – Oct 2025',
+    role: 'Freelance AI Engineer',
+    company: 'Independent · Remote',
+    description:
+      'Designed NP-hard, reasoning, and optimization challenge tasks to train and benchmark LLMs. Built diverse datasets across programming, logic, and quantitative domains to improve model robustness and generalization.',
+    chips: ['LLM Evaluation', 'Dataset Design', 'Python', 'Freelance'],
   },
   {
     date: 'Oct 2022 – Apr 2023',
@@ -96,7 +104,7 @@ export default function Experience() {
           <div
             key={i}
             className="reveal"
-            style={{ position: 'relative', paddingBottom: '3rem' }}
+            style={{ position: 'relative', paddingBottom: i === experiences.length - 1 ? 0 : '3rem' }}
           >
             {/* Timeline dot */}
             <div style={{

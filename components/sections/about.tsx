@@ -3,10 +3,12 @@
 import { useEffect, useRef, useState } from 'react'
 
 const skills = [
-  { label: 'Cloud & Data Platforms', chips: ['Azure Functions', 'GCP BigQuery', 'Snowflake', 'AWS Redshift', 'Databricks', 'Apache Kafka'] },
-  { label: 'Languages & Frameworks', chips: ['Python', 'SQL', 'PySpark', 'Go', 'C++'] },
-  { label: 'AI & ML',                chips: ['LangChain', 'TensorFlow', 'Scikit-learn', 'LLM Training', 'Geospatial ML'] },
+  { label: 'Cloud & Data Platforms', chips: ['Azure Functions', 'GCP BigQuery', 'Snowflake', 'AWS S3/RDS', 'Kafka', 'Hadoop'] },
+  { label: 'Languages & Frameworks', chips: ['Python', 'SQL', 'PySpark', 'TypeScript', 'Next.js', 'Go', 'C++'] },
+  { label: 'Data Engineering',       chips: ['dbt', 'DuckDB', 'Data Modeling', 'ETL/ELT', 'MongoDB', 'Prisma'] },
+  { label: 'AI & ML',                chips: ['LangChain', 'TensorFlow', 'Scikit-learn', 'LLM Evaluation', 'Geospatial ML', 'Claude Code'] },
   { label: 'Integration & ETL',      chips: ['REST API', 'GraphQL', 'SAP Integration', 'Pub/Sub', 'Webhooks'] },
+  { label: 'DevOps & CI/CD',         chips: ['Docker', 'GitHub Actions', 'Git', 'Azure DevOps'] },
   { label: 'BI & Reporting',         chips: ['Looker Studio', 'Power BI', 'Advanced Excel'] },
 ]
 
