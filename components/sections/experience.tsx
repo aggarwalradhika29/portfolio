@@ -11,7 +11,7 @@ const experiences = [
     role: 'Data Engineer & AI R&D Lead',
     company: 'Oddr · Remote',
     description:
-      'Founded and lead Oddr\'s Implementation AI R&D initiative (CPO-backed): building a multi-agent orchestration pipeline with memory and feedback loops and a golden template engine for 3E/Boomi/IB integrations — back-test framework validates agent-generated code at ≥85% accuracy. Independently architected a cloud-native data integration middleware on Azure (selected over Boomi via structured POC); designed API-led, event-driven ETL pipelines using Python, PySpark and SQL — 9M+ API calls/tenant/month across 13 tenants, ~90% cost reduction vs. Boomi, ~66% latency reduction. Reduced new tenant onboarding from 4+ months to <30 days. Won company hackathon with FixLab, an AI error-remediation agent built on Claude.',
+      'Founded and lead Oddr\'s Implementation AI R&D initiative (CPO-backed): building a multi-agent orchestration pipeline with memory and feedback loops and a golden template engine for Azure/Boomi/IB integrations — back-test framework validates agent-generated code at ≥85% accuracy. Independently architected a cloud-native data integration middleware on Azure (selected over Boomi via structured POC); designed API-led, event-driven ETL pipelines using Python, PySpark and SQL — 9M+ API calls/tenant/month across 13 tenants, ~90% cost reduction vs. Boomi, ~66% latency reduction. Reduced new tenant onboarding from 4+ months to <30 days. Won company hackathon with FixLab, an AI error-remediation agent built on Claude.',
     chips: ['Azure Functions', 'Python', 'PySpark', 'SQL', 'Multi-agent AI', 'LLM Orchestration', 'GitHub Actions', 'LegalTech'],
   },
   {
