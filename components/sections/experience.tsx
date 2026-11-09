@@ -1,18 +1,26 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
 import Chip from '@/components/ui/chip'
+import { useIsMobile, useRevealOnScroll } from '@/lib/hooks'
 
 
 
 const experiences = [
   {
     date: 'Oct 2025 – Present',
-    role: 'Integration Engineer, Data Engineering',
+    role: 'Data Engineer & AI R&D Lead',
     company: 'Oddr · Remote',
     description:
-      'Independently architected a cloud-native data integration middleware on Azure connecting law firm data sources to product APIs — full ownership from requirements scoping to production delivery. Designed API-led, event-driven ETL pipelines processing 9M+ API calls/tenant/month across multiple tenants, cutting integration cost 90% vs. Boomi and latency 66%. Built security architecture (Managed Identity, RBAC, private networking) and CI/CD via GitHub Actions.',
-    chips: ['Azure Functions', 'Python', 'PySpark', 'RBAC', 'Private Networking', 'GitHub Actions', 'Integration Builder', 'LegalTech'],
+      'Founded and lead Oddr\'s Implementation AI R&D initiative (CPO-backed): building a multi-agent orchestration pipeline with memory and feedback loops and a golden template engine for 3E/Boomi/IB integrations — back-test framework validates agent-generated code at ≥85% accuracy. Independently architected a cloud-native data integration middleware on Azure (selected over Boomi via structured POC); designed API-led, event-driven ETL pipelines using Python, PySpark and SQL — 9M+ API calls/tenant/month across 13 tenants, ~90% cost reduction vs. Boomi, ~66% latency reduction. Reduced new tenant onboarding from 4+ months to <30 days. Won company hackathon with FixLab, an AI error-remediation agent built on Claude.',
+    chips: ['Azure Functions', 'Python', 'PySpark', 'SQL', 'Multi-agent AI', 'LLM Orchestration', 'GitHub Actions', 'LegalTech'],
+  },
+  {
+    date: 'Aug 2025 – Oct 2025',
+    role: 'Freelance AI Engineer',
+    company: 'Independent · Remote · Part-time, alongside Guardian Group',
+    description:
+      'Designed NP-hard, reasoning, and optimization challenge tasks to train and benchmark LLMs. Built diverse datasets across programming, logic, and quantitative domains to improve model robustness and generalization. Wrapped up upon joining Oddr full-time.',
+    chips: ['LLM Evaluation', 'Dataset Design', 'Python', 'Freelance'],
   },
   {
     date: 'Sep 2023 – Oct 2025',
@@ -21,14 +29,6 @@ const experiences = [
     description:
       'Designed and owned cloud data warehouses on GCP BigQuery and Snowflake processing 100M+ records — primary analytics infrastructure for Product, Marketing, Finance, and IT. Built automated ETL/ELT pipelines (Shopify, Payments, GA4, Pub/Sub) reducing latency 60%. Led a middleware initiative eliminating 95% of manual order processing. Automated reconciliation and audit workflows, saving 30+ FTE hours/week. Delivered 30+ executive dashboards across BellaVita, GNC India, ThriveCo, Bevzilla, and BetterAlt.',
     chips: ['BigQuery', 'Snowflake', 'PySpark', 'Pub/Sub', 'SAP', 'Shopify', 'Looker Studio', 'D2C Product Tech'],
-  },
-  {
-    date: 'Aug 2025 – Oct 2025',
-    role: 'Freelance AI Engineer',
-    company: 'Independent · Remote',
-    description:
-      'Designed NP-hard, reasoning, and optimization challenge tasks to train and benchmark LLMs. Built diverse datasets across programming, logic, and quantitative domains to improve model robustness and generalization.',
-    chips: ['LLM Evaluation', 'Dataset Design', 'Python', 'Freelance'],
   },
   {
     date: 'Oct 2022 – Apr 2023',
@@ -49,33 +49,8 @@ const experiences = [
 ]
 
 export default function Experience() {
-  const sectionRef = useRef<HTMLElement>(null)
-
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth <= 768)
-    check()
-    window.addEventListener('resize', check)
-    return () => window.removeEventListener('resize', check)
-  }, [])
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.reveal').forEach((el, i) => {
-              setTimeout(() => el.classList.add('visible'), i * 120)
-            })
-          }
-        })
-      },
-      { threshold: 0.05 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
+  const isMobile = useIsMobile()
+  const sectionRef = useRevealOnScroll<HTMLElement>(0.05)
 
   return (
     <section
@@ -93,7 +68,7 @@ export default function Experience() {
         fontSize: 'clamp(1.9rem, 3vw, 2.8rem)',
         fontWeight: 300, lineHeight: 1.18, marginBottom: '0.9rem',
       }}>
-        Where I've <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>built</em> things
+        Where I&apos;ve <em style={{ fontStyle: 'italic', color: 'var(--accent)' }}>built</em> things
       </h2>
       <p style={{ fontSize: '0.95rem', color: 'var(--text-mid)', lineHeight: 1.8, maxWidth: 540, marginBottom: '3.5rem' }}>
         A track record of shipping production-grade data systems across cloud platforms — from satellite data at ISRO to enterprise integrations at scale.

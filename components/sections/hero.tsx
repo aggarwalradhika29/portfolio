@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { motion, type Variants } from 'framer-motion'
 import Button from '@/components/ui/button'
 import Tag from '@/components/ui/tag'
@@ -13,18 +14,17 @@ const fadeUp: Variants = {
 }
 
 export default function Hero() {
+  const [showSpotify, setShowSpotify] = useState(false)
+
+  useEffect(() => {
+    const hasIdle = typeof requestIdleCallback === 'function'
+    const id = hasIdle ? requestIdleCallback(() => setShowSpotify(true)) : setTimeout(() => setShowSpotify(true), 1500)
+    return () => (hasIdle ? cancelIdleCallback(id as number) : clearTimeout(id as ReturnType<typeof setTimeout>))
+  }, [])
+
   return (
     <>
       <section className="hero-section">
-        {/* Background gradients */}
-        <div style={{
-          position: 'absolute', inset: 0, zIndex: 0,
-          background: `
-            radial-gradient(ellipse 55% 55% at 75% 38%, var(--hero-grad1) 0%, transparent 70%),
-            radial-gradient(ellipse 40% 50% at 18% 72%, var(--hero-grad2) 0%, transparent 60%)
-          `,
-          transition: 'background 0.4s',
-        }} />
 
         {/* Left */}
         <div style={{ position: 'relative', zIndex: 1 }}>
@@ -44,7 +44,7 @@ export default function Hero() {
             custom={0.5} variants={fadeUp} initial="hidden" animate="show"
             style={{ marginBottom: '1.4rem' }}
           >
-            <Tag variant="sage">🟢 Open for freelance data & AI engineering</Tag>
+            <Tag variant="sage">Data Engineer & AI R&D Lead · Oddr</Tag>
           </motion.div>
 
           <motion.h1
@@ -85,7 +85,7 @@ export default function Hero() {
               Oddr
             </a>
             
-            {' '}working on enterprise data infrastructure.
+            {' '}building multi-tenant data infrastructure and leading an AI R&D initiative.
           </motion.p>
 
           <motion.div
@@ -172,15 +172,18 @@ export default function Hero() {
               <div style={{ fontSize: '0.62rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-soft)', marginBottom: '0.6rem' }}>
                 currently playing
               </div>
-              <iframe
-                src="https://open.spotify.com/embed/playlist/3ZYe1yuCg29XHkj81H1stg"
-                width="100%"
-                height="80"
-                frameBorder="0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-                style={{ borderRadius: 8 }}
-              />
+              {showSpotify ? (
+                <iframe
+                  src="https://open.spotify.com/embed/playlist/3ZYe1yuCg29XHkj81H1stg"
+                  width="100%"
+                  height="80"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  style={{ borderRadius: 8 }}
+                />
+              ) : (
+                <div style={{ width: '100%', height: 80, borderRadius: 8, background: 'var(--bg)' }} />
+              )}
             </div>
           </div>
 
@@ -206,7 +209,7 @@ export default function Hero() {
 
       <style>{`
         .hero-section {
-          min-height: 100vh;
+          min-height: 100svh;
           display: grid;
           grid-template-columns: 1fr 1fr;
           align-items: center;

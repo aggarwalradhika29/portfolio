@@ -26,8 +26,6 @@
   --blush-mid:    #e8c4b5;
   --nav-bg:       rgba(250, 246, 241, 0.88);
   --shadow:       rgba(196, 112, 74, 0.10);
-  --hero-grad1:   rgba(181, 196, 177, 0.22);
-  --hero-grad2:   rgba(242, 217, 208, 0.32);
   --toggle-bg:    #e8ddd5;
 }
 
@@ -49,8 +47,6 @@
   --blush-mid:    rgba(232, 196, 181, 0.2);
   --nav-bg:       rgba(26, 21, 18, 0.90);
   --shadow:       rgba(0, 0, 0, 0.30);
-  --hero-grad1:   rgba(154, 184, 152, 0.12);
-  --hero-grad2:   rgba(217, 137, 106, 0.10);
   --toggle-bg:    #3a302a;
 }
 
